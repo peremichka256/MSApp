@@ -13,7 +13,8 @@ namespace CoffeeAPI.Controllers
     {
         private static readonly string[] Coffees = new[]
         {
-            "Flat White", "Long Black", "Latte", "Americano", "Cappuccino"
+            "Ur coffee is: Flat White", "Ur coffee is: Long Black", 
+            "Ur coffee is: Latte", "Ur coffee is: Americano", "Ur coffee is: Cappuccino"
         };
 
     

@@ -13,7 +13,8 @@ namespace TeaAPI.Controllers
     {
         private static readonly string[] Teas = new[]
         {
-            "Green", "Peppermint", "Earl Grey", "English Breakfast", "Camomile"
+            "Ur tea is: Green", "Ur tea is: Peppermint", "Ur tea is: Earl Grey",
+             "Ur tea is: English Breakfast", "Ur tea is: Camomile"
         };
 
     
