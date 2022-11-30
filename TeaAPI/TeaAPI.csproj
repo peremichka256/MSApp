@@ -5,5 +5,9 @@
     <UserSecretsId>Tea-API-1a966c0a-ebea-446d-acf1-18599fca32e2</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="6.4.0" />
+  </ItemGroup>
+
 
 </Project>

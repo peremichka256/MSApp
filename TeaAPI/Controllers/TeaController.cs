@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using TeaAPI.MessageServices;
 
 namespace TeaAPI.Controllers
 {
@@ -17,13 +18,12 @@ namespace TeaAPI.Controllers
              "Ur tea is: English Breakfast", "Ur tea is: Camomile"
         };
 
+        private IMessageService _messageService = new MessageService();
     
         [HttpGet]
-        public ActionResult Get()
+        public string Get()
         {
-            var rng = new Random();
-            
-            return Ok(Teas[rng.Next(Teas.Length)]);
+            return _messageService.PullFromRabbit();
         }
     }
 }

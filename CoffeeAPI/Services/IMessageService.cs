@@ -1,6 +1,8 @@
-﻿namespace CityAPI.Services;
-
-public interface IMessageService
+﻿namespace CityAPI.Services
 {
-	bool Enqueue(string message);
+
+	public interface IMessageService
+	{
+		bool Enqueue(string message);
+	}
 }

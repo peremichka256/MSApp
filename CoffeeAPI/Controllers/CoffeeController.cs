@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using CoffeeAPI.MessageServices;
+using System.Text.Json;
 
 namespace CoffeeAPI.Controllers
 {
@@ -17,13 +19,16 @@ namespace CoffeeAPI.Controllers
             "Ur coffee is: Latte", "Ur coffee is: Americano", "Ur coffee is: Cappuccino"
         };
 
-    
+        private readonly IMessageService _messageService = new MessageService();
+
         [HttpGet]
-        public ActionResult Get()
+        public string Get()
         {
             var rng = new Random();
-            
-            return Ok(Coffees[rng.Next(Coffees.Length)]);
+            var randomCoffee = Coffees[rng.Next(Coffees.Length)];
+            var jsonPackage = JsonSerializer.Serialize(randomCoffee);
+            _messageService.Enqueue(jsonPackage);
+            return randomCoffee;
         }
     }
 }
